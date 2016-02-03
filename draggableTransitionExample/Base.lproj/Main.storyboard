@@ -19,25 +19,37 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hz6-Ma-XlK">
-                                <rect key="frame" x="277" y="345" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
+                                <rect key="frame" x="256" y="345" width="88" height="30"/>
+                                <state key="normal" title="Modal segue"/>
                                 <connections>
-                                    <action selector="performSegue:" destination="BYZ-38-t0r" eventType="touchUpInside" id="FEf-bI-MG1"/>
+                                    <action selector="performModal:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hYa-c4-Jar"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8la-LM-Bh9">
+                                <rect key="frame" x="249" y="383" width="103" height="30"/>
+                                <state key="normal" title="Popover segue"/>
+                                <connections>
+                                    <action selector="performPopover:" destination="BYZ-38-t0r" eventType="touchUpInside" id="BeI-N8-yqL"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
                         <constraints>
+                            <constraint firstItem="8la-LM-Bh9" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="9lJ-Bg-zT3"/>
                             <constraint firstItem="hz6-Ma-XlK" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="TKT-g9-3QY"/>
                             <constraint firstItem="hz6-Ma-XlK" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="bottom" multiplier="0.6" id="uAl-g2-03v"/>
+                            <constraint firstItem="8la-LM-Bh9" firstAttribute="top" secondItem="hz6-Ma-XlK" secondAttribute="bottom" constant="8" id="yUz-0g-CJk"/>
                         </constraints>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="HmY-4m-tBY" appends="YES" id="rCR-4z-sdO"/>
                         </connections>
                     </view>
                     <connections>
-                        <segue destination="vPT-Lb-Cbd" kind="presentation" identifier="TestSegue" id="5Or-6m-yXf"/>
+                        <segue destination="vPT-Lb-Cbd" kind="presentation" identifier="ModalSegue" id="5Or-6m-yXf"/>
+                        <segue destination="vPT-Lb-Cbd" kind="popoverPresentation" identifier="PopoverSegue" popoverAnchorView="8la-LM-Bh9" id="nhh-xj-PpO">
+                            <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                        </segue>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -48,6 +60,7 @@
                     </connections>
                 </screenEdgePanGestureRecognizer>
             </objects>
+            <point key="canvasLocation" x="365" y="389"/>
         </scene>
         <!--Modal View Controller-->
         <scene sceneID="jIG-lQ-OTo">
@@ -68,4 +81,7 @@
             <point key="canvasLocation" x="1158" y="389"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="nhh-xj-PpO"/>
+    </inferredMetricsTieBreakers>
 </document>
