@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="draggableTransitionExample" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hz6-Ma-XlK">
+                                <rect key="frame" x="277" y="345" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="performSegue:" destination="BYZ-38-t0r" eventType="touchUpInside" id="FEf-bI-MG1"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="hz6-Ma-XlK" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="TKT-g9-3QY"/>
+                            <constraint firstItem="hz6-Ma-XlK" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="bottom" multiplier="0.6" id="uAl-g2-03v"/>
+                        </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="HmY-4m-tBY" appends="YES" id="rCR-4z-sdO"/>
+                        </connections>
+                    </view>
+                    <connections>
+                        <segue destination="vPT-Lb-Cbd" kind="presentation" identifier="TestSegue" id="5Or-6m-yXf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <screenEdgePanGestureRecognizer minimumNumberOfTouches="1" id="HmY-4m-tBY">
+                    <rectEdge key="edges" right="YES"/>
+                    <connections>
+                        <action selector="reco:" destination="BYZ-38-t0r" id="Fy2-cb-El3"/>
+                    </connections>
+                </screenEdgePanGestureRecognizer>
+            </objects>
+        </scene>
+        <!--Modal View Controller-->
+        <scene sceneID="jIG-lQ-OTo">
+            <objects>
+                <viewController id="vPT-Lb-Cbd" customClass="ModalViewController" customModule="draggableTransitionExample" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ivX-bA-t0c"/>
+                        <viewControllerLayoutGuide type="bottom" id="f4M-4W-44m"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="6Fb-dX-I3y">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gko-jh-hlU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1158" y="389"/>
+        </scene>
+    </scenes>
+</document>
